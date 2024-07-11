@@ -21240,6 +21240,11 @@ a.text-primary-hover:hover, button.text-primary-hover:hover {
 }
 
 /*User CSS*/
+.zoom:hover { /* IE 9 */
+  -webkit-transform: scale(1.5); /* Safari 3-8 */
+  transform: scale(1.5);
+}
+
 /* hide scrollbar */
 ::-webkit-scrollbar {
   width: 1px;
@@ -24991,5 +24996,11 @@ video {
 
 .tl-rtl .tl-credit {
   text-align: left;
+}
+
+.cd-headline {
+  -webkit-animation: blink 20s infinite;
+  animation: blink 20s infinite;
+  animation-direction: alternate-reverse;
 }
 /*# sourceMappingURL=style.css.map */

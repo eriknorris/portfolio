@@ -540,14 +540,21 @@ var e = {
           type.forEach(el => {
               var strings = el.getAttribute('data-type-text');
               var split_strings = strings.split("&&");
-              var typespeed = el.getAttribute('data-speed') ? el.getAttribute('data-speed') : 200;
-              var typeBackSpeed = el.getAttribute('data-back-speed') ? el.getAttribute('data-back-speed') : 50;
+              var typespeed = el.getAttribute('data-speed') ? el.getAttribute('data-speed') : 100;
+              var typeBackSpeed = el.getAttribute('data-back-speed') ? el.getAttribute('data-back-speed') : 20;
+              var startDelay = el.getAttribute('startDelay') ? el.getAttribute('startDelay') : 200;
+              var backDelay = el.getAttribute('backDelay') ? el.getAttribute('backDelay') : 2000;
+              var cursorChar = el.getAttribute('cursorChar') ? el.getAttribute('cursorChar') : "_";
+
 
               ityped.init(el, {
                   strings: split_strings,
                   showCursor: true,
                   typeSpeed: typespeed,
-                  backSpeed: typeBackSpeed
+                  backSpeed: typeBackSpeed,
+                  startDelay: startDelay,
+                  backDelay: backDelay,
+                  cursorChar: cursorChar
               });
           });
       }

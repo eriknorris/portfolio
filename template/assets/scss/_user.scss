@@ -57,6 +57,14 @@
 // }
 
 
+.zoom:hover {
+  -ms-transform: scale(1.5); /* IE 9 */
+  -webkit-transform: scale(1.5); /* Safari 3-8 */
+  transform: scale(1.5); 
+}
+
+
+
 
 
 //   CSS-Only Horizontal Parallax Gallery  (CHPG) START
@@ -3450,18 +3458,40 @@ video {
   .tl-rtl .tl-credit {
     text-align: left;
   }
-  
-
-
-
-
-
-
 
 
 // TimelineJS END
 
+//ityped test START
 
+.cd-headline {
+  // color: green !important;
+  -webkit-animation: blink 20.0s infinite;
+  -moz-animation: blink 20.0s infinite;
+  animation: blink 20.0s infinite;
+  animation-direction: alternate-reverse;
+}
+
+// @keyframes blink {
+//   100% {
+//       opacity: 0;
+//   }
+// }
+
+// @-webkit-keyframes blink {
+//   100% {
+//       opacity: 0;
+//   }
+// }
+
+// @-moz-keyframes blink {
+//   100% {
+//       opacity: 0;
+//   }
+// }
+
+
+//ityped test END
 
 
 
