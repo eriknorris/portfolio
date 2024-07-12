@@ -7,6 +7,86 @@
 // Additional style for theme
 //
 
+
+// text stroke colors
+.text-primary-stroke {
+  color: transparent !important;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: var(--#{$prefix}primary);
+  transition: $transition-base;
+}
+
+.text-primary-stroke.text-hover-fill:hover,
+a.text-primary-stroke:hover {
+  color: var(--#{$prefix}primary) !important;
+}
+
+.text-white-stroke {
+  color: transparent !important;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: var(--#{$prefix}white);
+  transition: $transition-base;
+}
+
+.text-white-stroke.text-hover-fill:hover,
+a.text-white-stroke:hover {
+  color: var(--#{$prefix}white)!important;
+}
+
+.text-dark-stroke {
+  color: transparent !important;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: var(--#{$prefix}gray-800);
+  transition: $transition-base;
+}
+
+.text-dark-stroke.text-hover-fill:hover,
+a.text-dark-stroke:hover {
+  color: var(--#{$prefix}gray-800) !important;
+}
+
+.text-light-stroke {
+  color: transparent !important;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: var(--#{$prefix}gray-300);
+  transition: $transition-base;
+}
+
+.text-light-stroke.text-hover-fill:hover,
+a.text-light-stroke:hover {
+  color: var(--#{$prefix}gray-300) !important;
+}
+
+// text stroke size
+.text-stroke-md {
+  -webkit-text-stroke-width: 2px;
+}
+
+.text-stroke-lg {
+  -webkit-text-stroke-width: 3px;
+}
+
+// Text Shadow 
+.text-primary-shadow{
+  text-shadow: 0.03em 0.03em 0 $primary;
+}
+
+.text-dark-shadow{
+  text-shadow: 0.03em 0.03em 0 $dark;
+}
+
+.text-white-shadow{
+  text-shadow: 0.03em 0.03em 0 $white;
+}
+
+.text-light-shadow{
+  text-shadow: 0.03em 0.03em 0 $gray-300;
+}
+
+
+
+
+
 // Background primary hover
 .bg-primary-hover{
   &:hover, &.active, &:focus{
