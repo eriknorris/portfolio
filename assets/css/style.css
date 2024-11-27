@@ -16808,6 +16808,11 @@ textarea.form-control-lg {
           transform: rotate(343deg) !important;
 }
 
+.rotate-350 {
+  -webkit-transform: rotate(350deg) !important;
+          transform: rotate(350deg) !important;
+}
+
 .rotate-355 {
   -webkit-transform: rotate(355deg) !important;
           transform: rotate(355deg) !important;
@@ -16959,6 +16964,10 @@ textarea.form-control-lg {
     -webkit-transform: rotate(343deg) !important;
             transform: rotate(343deg) !important;
   }
+  .rotate-sm-350 {
+    -webkit-transform: rotate(350deg) !important;
+            transform: rotate(350deg) !important;
+  }
   .rotate-sm-355 {
     -webkit-transform: rotate(355deg) !important;
             transform: rotate(355deg) !important;
@@ -17067,6 +17076,10 @@ textarea.form-control-lg {
   .rotate-md-343 {
     -webkit-transform: rotate(343deg) !important;
             transform: rotate(343deg) !important;
+  }
+  .rotate-md-350 {
+    -webkit-transform: rotate(350deg) !important;
+            transform: rotate(350deg) !important;
   }
   .rotate-md-355 {
     -webkit-transform: rotate(355deg) !important;
@@ -17177,6 +17190,10 @@ textarea.form-control-lg {
     -webkit-transform: rotate(343deg) !important;
             transform: rotate(343deg) !important;
   }
+  .rotate-lg-350 {
+    -webkit-transform: rotate(350deg) !important;
+            transform: rotate(350deg) !important;
+  }
   .rotate-lg-355 {
     -webkit-transform: rotate(355deg) !important;
             transform: rotate(355deg) !important;
@@ -17286,6 +17303,10 @@ textarea.form-control-lg {
     -webkit-transform: rotate(343deg) !important;
             transform: rotate(343deg) !important;
   }
+  .rotate-xl-350 {
+    -webkit-transform: rotate(350deg) !important;
+            transform: rotate(350deg) !important;
+  }
   .rotate-xl-355 {
     -webkit-transform: rotate(355deg) !important;
             transform: rotate(355deg) !important;
@@ -17394,6 +17415,10 @@ textarea.form-control-lg {
   .rotate-xxl-343 {
     -webkit-transform: rotate(343deg) !important;
             transform: rotate(343deg) !important;
+  }
+  .rotate-xxl-350 {
+    -webkit-transform: rotate(350deg) !important;
+            transform: rotate(350deg) !important;
   }
   .rotate-xxl-355 {
     -webkit-transform: rotate(355deg) !important;
