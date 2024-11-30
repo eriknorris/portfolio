@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+	<title>Erik Norris' Portfolio</title>
+
+	<!-- Meta Tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="author" content="Webestica.com">
+	<meta name="description" content="Technology and Corporate Bootstrap Theme">
+
+	<!-- Dark mode -->
+	<script>
+		const storedTheme = localStorage.getItem('theme')
+
+		const getPreferredTheme = () => {
+			if (storedTheme) {
+				return storedTheme
+			}
+			return window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'light'
+		}
+
+		const setTheme = function (theme) {
+			if (theme === 'auto' && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+				document.documentElement.setAttribute('data-bs-theme', 'dark')
+			} else {
+				document.documentElement.setAttribute('data-bs-theme', theme)
+			}
+		}
+
+		setTheme(getPreferredTheme())
+
+		window.addEventListener('DOMContentLoaded', () => {
+			var el = document.querySelector('.theme-icon-active');
+			if (el != 'undefined' && el != null) {
+				const showActiveTheme = theme => {
+					const activeThemeIcon = document.querySelector('.theme-icon-active use')
+					const btnToActive = document.querySelector(`[data-bs-theme-value="${theme}"]`)
+					const svgOfActiveBtn = btnToActive.querySelector('.mode-switch use').getAttribute('href')
+
+					document.querySelectorAll('[data-bs-theme-value]').forEach(element => {
+						element.classList.remove('active')
+					})
+
+					btnToActive.classList.add('active')
+					activeThemeIcon.setAttribute('href', svgOfActiveBtn)
+				}
+
+				window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
+					if (storedTheme !== 'light' || storedTheme !== 'dark') {
+						setTheme(getPreferredTheme())
+					}
+				})
+
+				showActiveTheme(getPreferredTheme())
+
+				document.querySelectorAll('[data-bs-theme-value]')
+					.forEach(toggle => {
+						toggle.addEventListener('click', () => {
+							const theme = toggle.getAttribute('data-bs-theme-value')
+							localStorage.setItem('theme', theme)
+							setTheme(theme)
+							showActiveTheme(theme)
+						})
+					})
+
+			}
+		})
+
+	</script>
+
+	<!-- Favicon -->
+	<link rel="shortcut icon" href="./assets/images/favicon.ico">
+	<link rel="apple-touch-icon" sizes="180x180" href="./assets/images/favicon/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="./assets/images/favicon/favicon-16x16.png">
+	<link rel="manifest" href="./assets/images/favicon/site.webmanifest">
+	<link rel="mask-icon" href="./assets/images/favicon/safari-pinned-tab.svg" color="#a1a1a8">
+	<meta name="msapplication-TileColor" content="#a1a1a8">
+	<meta name="theme-color" content="#a1a1a8">
+
+	<!-- Google Font -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link
+		href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap"
+		rel="stylesheet">
+
+	<!-- Plugins CSS -->
+	<link rel="stylesheet" type="text/css" href="assets/vendor/font-awesome/css/all.min.css">
+	<link rel="stylesheet" type="text/css" href="assets/vendor/bootstrap-icons/bootstrap-icons.css">
+	<link rel="stylesheet" type="text/css" href="assets/vendor/swiper/swiper-bundle.min.css">
+
+	<!-- Theme CSS -->
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+
+	<!-- TimelineJS CSS -->
+	<script id='timeline-script-tag' type="text/javascript" src="./assets/js/timeline_OG.js"></script>
+	<!-- <link rel="stylesheet" href="../css/timeline.css"> -->
+
+
+</head>
+
+<body>
+
+	<!-- Header START -->
+	<header class="header-sticky header-absolute" data-bs-theme="dark">
+		<!-- Logo Nav START -->
+		<nav class="navbar navbar-expand-xl px-lg-5">
+			<div class="container-fluid">
+				<!-- Logo START -->
+				<a class="navbar-brand me-5" href="index.html">
+					<img class="light-mode-item navbar-brand-item"
+						src="assets/images/brand/EN_wordmark_H_black_1200.png" alt="logo">
+					<img class="dark-mode-item navbar-brand-item" src="assets/images/brand/EN_wordmark_H_white_1200.png"
+						alt="logo">
+				</a>
+				<!-- Logo END -->
+
+				<!-- Buttons -->
+				<ul class="nav align-items-center dropdown-hover ms-sm-2">
+					<!-- Dark mode option START -->
+					<li class="nav-item dropdown dropdown-animation">
+						<button class="btn btn-link mb-0 px-2 lh-1" id="bd-theme" type="button" aria-expanded="false"
+							data-bs-toggle="dropdown" data-bs-display="static">
+							<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+								class="bi bi-circle-half theme-icon-active fill-mode fa-fw" viewBox="0 0 16 16">
+								<path d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z" />
+								<use href="#"></use>
+							</svg>
+						</button>
+
+						<ul class="dropdown-menu min-w-auto dropdown-menu-end" aria-labelledby="bd-theme">
+							<li class="mb-1">
+								<button type="button" class="dropdown-item d-flex align-items-center"
+									data-bs-theme-value="light">
+									<svg width="16" height="16" fill="currentColor"
+										class="bi bi-brightness-high-fill fa-fw mode-switch me-1" viewBox="0 0 16 16">
+										<path
+											d="M12 8a4 4 0 1 1-8 0 4 4 0 0 1 8 0zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z" />
+										<use href="#"></use>
+									</svg>Light
+								</button>
+							</li>
+							<li class="mb-1">
+								<button type="button" class="dropdown-item d-flex align-items-center"
+									data-bs-theme-value="dark">
+									<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+										class="bi bi-moon-stars-fill fa-fw mode-switch me-1" viewBox="0 0 16 16">
+										<path
+											d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z" />
+										<path
+											d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z" />
+										<use href="#"></use>
+									</svg>Dark
+								</button>
+							</li>
+							<li>
+								<button type="button" class="dropdown-item d-flex align-items-center active"
+									data-bs-theme-value="auto">
+									<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+										class="bi bi-circle-half fa-fw mode-switch me-1" viewBox="0 0 16 16">
+										<path d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z" />
+										<use href="#"></use>
+									</svg>Auto
+								</button>
+							</li>
+						</ul>
+					</li>
+					<!-- Dark mode option END -->
+
+					<!-- Search -->
+					<!-- <li class="nav nav-item dropdown nav-search px-1 px-lg-3">
+						<a class="btn btn-light border btn-round mb-0" role="button" href="#" id="navSearch"
+							data-bs-toggle="dropdown" aria-expanded="true" data-bs-auto-close="outside"
+							data-bs-display="static">
+							<i class="bi bi-search"> </i>
+						</a>
+						<div class="dropdown-menu dropdown-menu-end shadow rounded p-2" aria-labelledby="navSearch"
+							data-bs-popper="none">
+							<form class="input-group">
+								<input class="form-control border-primary" type="search" placeholder="Search..."
+									aria-label="Search">
+								<button class="btn btn-primary m-0" type="submit">Search</button>
+							</form>
+						</div>
+					</li> -->
+
+					<!-- Offcanvas cart menu -->
+					<!--
+				<li class="nav-item position-relative ms-2 ms-sm-3 d-none d-sm-block">
+					<a class="btn btn-dark mb-0">free consultation</a>
+				</li>
+-->
+
+					<!-- Responsive navbar toggler -->
+					<!-- <li class="nav-item">
+						<button class="navbar-toggler ms-3 p-2" type="button" data-bs-toggle="collapse"
+							data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false"
+							aria-label="Toggle navigation">
+							<span class="navbar-toggler-animation">
+								<span></span>
+								<span></span>
+								<span></span>
+							</span>
+						</button>
+					</li> -->
+				</ul>
+
+			</div>
+		</nav>
+		<!-- Logo Nav END -->
+	</header>
+	<!-- Header END -->
+
+	<!-- **************** MAIN CONTENT START **************** -->
+	<main>
+
+
+		
+<!-- =======================
+Work START -->
+<section>
+	<div class="container">
+		<!-- Title -->
+		<div class="inner-container text-center mb-4 mb-sm-6">
+			<h2 class="mb-4">Showcasing Recent Projects</h2>
+			<p class="mb-0">Discover a selection of our most recent client projects, showcasing our expertise, creativity, and commitment to delivering outstanding results.</p>
+		</div>
+
+		<div class="row g-4">
+			<!-- Tabs -->
+			<div class="col-md-4 col-lg-3">
+				<div class="d-flex flex-column h-100">
+					<h6 class="mb-sm-3">Browse by:</h6>
+					<!-- Tab item START -->
+					<div class="grid-menu mb-4" data-target=".filter-container">
+						<ul class="nav flex-md-column gap-1 nav-pills nav-pills-primary">
+							<li class="nav-item">
+								<a class="nav-link active" data-filter="*">All work</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" data-filter=".marketing">Digital Marketing</a>          
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" data-filter=".design">Web design</a>        
+							</li>
+							<li class="nav-item">
+									<a class="nav-link" data-filter=".business">Business development</a>        
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" data-filter=".brand">Brand design</a>        
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" data-filter=".ui">UI/UX design</a>        
+							</li>
+						</ul>
+
+						<!--Tab item END  -->
+					</div>
+					
+					<!-- Button -->
+					<a href="portfolio-showcase.html" class="btn btn-light mt-auto mb-5">View all projects<i class="fa-solid fa-arrow-right-long ms-2"></i></a>
+				</div>
+			</div>
+
+			<!-- Tab content START -->
+			<div class="col-md-8 col-lg-9">
+				<div class="row g-4 filter-container" data-isotope='{"layoutMode": "masonry"}'>
+					<!-- Work item -->
+					<div class="col-sm-6 col-lg-4 grid-item marketing business brand">
+						<div class="card card-element-hover card-metro-hover">
+							<!-- Card Image -->              
+							<img src="assets/images/portfolio/masonry/01.jpg" alt="portfolio-image">  
+
+							<!-- Card elements -->
+							<div class="card-img-overlay hover-element d-flex"> 
+								<!-- Info -->
+								<div class="card-text mt-auto">
+									<h6 class="mb-0"><a href="portfolio-case-studies-v1.html" class="text-white stretched-link">Dynamic Workflows Website</a></h6>
+									<small class="text-white">UI/UX design</small>
+								</div>
+							</div>						
+						</div>
+					</div>
+
+					<!-- Work item -->
+					<div class="col-sm-6 col-lg-4 grid-item brand ui">
+						<div class="card card-element-hover card-metro-hover">
+							<!-- Card Image -->              
+							<img src="assets/images/portfolio/masonry/04.jpg" alt="portfolio-image">  
+								
+							<!-- Card elements -->
+							<div class="card-img-overlay hover-element d-flex"> 
+								<!-- Info -->
+								<div class="card-text mt-auto">
+									<h6 class="mb-0"><a href="portfolio-case-studies-v1.html" class="text-white stretched-link">ElevateTech Redesign</a></h6>
+									<small class="text-white">Brand design</small>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- Work item -->
+					<div class="col-sm-6 col-lg-4 grid-item business design brand">
+						<div class="card card-element-hover card-metro-hover">
+							<!-- Card Image -->              
+							<img src="assets/images/portfolio/masonry/02.jpg" alt="portfolio-image">  	
+							
+							<!-- Card elements -->
+							<div class="card-img-overlay hover-element d-flex"> 
+								<!-- Info -->
+								<div class="card-text mt-auto">
+									<h6 class="mb-0"><a href="portfolio-case-studies-v1.html" class="text-white stretched-link">User-Centric Redesign</a></h6>
+									<small class="text-white">Web design</small>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- Work item -->
+					<div class="col-sm-6 col-lg-4 grid-item design marketing">
+						<div class="card card-element-hover card-metro-hover">
+							<!-- Card Image -->              
+							<img src="assets/images/portfolio/masonry/05.jpg" alt="portfolio-image">
+							
+							<!-- Card elements -->
+							<div class="card-img-overlay hover-element d-flex"> 
+								<!-- Info -->
+								<div class="card-text mt-auto">
+									<h6 class="mb-0"><a href="portfolio-case-studies-v1.html" class="text-white stretched-link">Sustainability Initiative</a></h6>
+									<small class="text-white">Business dev</small>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- Work item -->
+					<div class="col-sm-6 col-lg-4 grid-item business design">
+						<div class="card card-element-hover card-metro-hover">
+							<!-- Card Image -->              
+							<img src="assets/images/portfolio/masonry/06.jpg" alt="portfolio-image"> 
+							
+							<!-- Card elements -->
+							<div class="card-img-overlay hover-element d-flex"> 
+								<!-- Info -->
+								<div class="card-text mt-auto">
+									<h6 class="mb-0"><a href="portfolio-case-studies-v1.html" class="text-white stretched-link">E-commerce Expansion</a></h6>
+									<small class="text-white">Digital Marketing</small>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- Work item -->
+					<div class="col-sm-6 col-lg-4 grid-item ui">
+						<div class="card card-element-hover card-metro-hover">
+							<!-- Card Image -->              
+							<img src="assets/images/portfolio/masonry/03.jpg" alt="portfolio-image"> 
+							
+							<!-- Card elements -->
+							<div class="card-img-overlay hover-element d-flex"> 
+								<!-- Info -->
+								<div class="card-text mt-auto">
+									<h6 class="mb-0"><a href="portfolio-case-studies-v1.html" class="text-white stretched-link">Social Media Engagement</a></h6>
+									<small class="text-white">UI/UX design</small>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- Tab content END -->
+		</div> <!-- Row END -->
+	</div>	
+</section>
+<!-- =======================
+Work END -->
+
+
+
+		
+	<!-- =======================
+Footer START -->
+	<footer class="pt-9">
+		<div class="container position-relative mt-sm-8">
+
+
+
+			<!-- Divider -->
+			<hr class="mt-4 mb-3">
+
+			<!-- Bottom footer -->
+			<div class="d-md-flex justify-content-between align-items-center text-center text-lg-start ">
+				<!-- Logo -->
+				<a class="navbar-brand" href="index.html">
+					<img class="light-mode-item navbar-brand-item h-40px"
+						src="assets/images/brand/EN_logo_black_1200.png" alt="logo">
+					<img class="dark-mode-item navbar-brand-item h-40px"
+						src="assets/images/brand/EN_logo_white_1200.png" alt="logo">
+				</a>
+				<!-- copyright text -->
+				<div class="text-body">
+					<i class="bi bi-c-circle"></i> 2024 Erik Norris. Website design and production by <a
+						href="https://www.eriknorris.com/" class="text-body text-primary-hover">Erik Norris</a>.
+				</div>
+				<!-- copyright links-->
+			</div>
+		</div>
+	</footer>
+	<!-- =======================
+Footer END -->
+
+	<!-- Back to top -->
+	<div class="back-top"></div>
+
+	<!-- Bootstrap JS -->
+	<script src="assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+
+	<!--Vendors-->
+	<script src="assets/vendor/isotope/isotope.pkgd.min.js"></script>
+	<script src="assets/vendor/isotope/isotope.pkgd.js"></script>
+	<script src="assets/vendor/purecounterjs/dist/purecounter_vanilla.js"></script>
+	<script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+	<script src="assets/vendor/jarallax/jarallax.min.js"></script>
+	<script src="assets/vendor/jarallax/jarallax-video.min.js"></script>
+
+	<!-- Theme Functions -->
+	<script src="assets/js/functions.js"></script>
+
+	<!-- TimelineJS  -->
+	<script type="text/javascript">
+		var additionalOptions = {
+			// height: '650',
+			initial_zoom: 7,
+			font: 'pt',
+			hash_bookmark: true,
+			start_at_end: true,
+			// start_at_slide: 83,
+			default_bg_color: { r: 25, g: 25, b: 25 },
+			timenav_height: 250,
+			timenav_position: "top",
+		}
+
+		timeline = new TL.Timeline('timeline-embed',
+			'https://docs.google.com/spreadsheets/d/1ZD_qhopkB3KSeCTfHtgP6r8gf4fGpX4Dv7Ge6DtQKmw/edit#gid=0',
+			additionalOptions);
+	</script>
+
+	<!-- LinkedIn JS-->
+	<script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
+
+</body>
+
+</html>
