@@ -505,6 +505,7 @@ button,
 [type=reset],
 [type=submit] {
   -webkit-appearance: button;
+  appearance: button;
 }
 button:not(:disabled),
 [type=button]:not(:disabled),
@@ -562,6 +563,7 @@ legend + * {
 
 [type=search] {
   -webkit-appearance: textfield;
+  appearance: textfield;
   outline-offset: -2px;
 }
 
@@ -589,6 +591,7 @@ legend + * {
 ::file-selector-button {
   font: inherit;
   -webkit-appearance: button;
+  appearance: button;
 }
 
 output {
@@ -22281,7 +22284,7 @@ video {
 [class^=tl-icon-],
 [class*=" tl-icon-"] {
   font-family: "tl-icons";
-  speak: none;
+  /*speak: none;*/
   font-style: normal;
   font-weight: normal;
   font-variant: normal;
@@ -22837,7 +22840,7 @@ video {
 .tl-timenav .tl-timenav-line:before,
 .tl-timenav .tl-timenav-line:after {
   font-family: "tl-icons";
-  speak: none;
+  /*speak: none;*/
   font-style: normal;
   font-weight: normal;
   font-variant: normal;
@@ -23717,8 +23720,11 @@ video {
 ================================================== */
 .tlanimate {
   -webkit-transform: translateZ(0);
+  transform: translateZ(0);
   -webkit-perspective: 1000;
+  perspective: 1000;
   -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
 }
 
 .tl-animate {
@@ -24055,7 +24061,7 @@ video {
 .tl-skinny .tl-slide .tl-slide-content-container .tl-slide-content .tl-text {
   display: block;
   height: auto;
-  vertical-align: initial;
+  /*vertical-align: initial;*/
   position: static;
   width: 100%;
   max-width: 100%;
@@ -24208,7 +24214,7 @@ video {
 .tl-slidenav-next .tl-slidenav-icon,
 .tl-slidenav-previous .tl-slidenav-icon {
   font-family: "tl-icons";
-  speak: none;
+  /*speak: none;*/
   font-style: normal;
   font-weight: normal;
   font-variant: normal;
@@ -24331,12 +24337,15 @@ video {
   opacity: 1;
 }
 
-.tl-layout-landscape.tl-mobile .tl-slidenav-next:hover {
+/*
+.tl-layout-landscape.tl-mobile .tl-slidenav-next:hover {*/
   /**
             * On mobile the hover state stays on the button after the click
             * Show the default margin as before the click
             */
+            /*
 }
+*/
 
 .tl-layout-landscape.tl-mobile .tl-slidenav-next:hover .tl-slidenav-icon {
   margin-left: 76px;
@@ -24350,13 +24359,15 @@ video {
   margin-left: 80px;
 }
 
-.tl-layout-landscape.tl-mobile .tl-slidenav-previous:hover {
+/*
+.tl-layout-landscape.tl-mobile .tl-slidenav-previous:hover {*/
   /**
             * On mobile the hover state stays on the button after the click
             * Show the default margin as before the click
             */
+            /*
 }
-
+*/
 .tl-layout-landscape.tl-mobile .tl-slidenav-previous:hover .tl-slidenav-icon {
   margin-left: 0px;
   filter: alpha(opacity=100);
